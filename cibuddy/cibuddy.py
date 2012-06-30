@@ -57,7 +57,7 @@ class Buddy(object):
         self.interface = self.configuration.interfaces[0][0]
         self.handler = self.get_handler()
         self.handler.reset()
-        self._send(0x70)  # Clean state
+        self._send(0xF0)  # Clean state
 
     def get_handler(self):
         if not hasattr(self, 'handler'):
@@ -87,36 +87,45 @@ class Buddy(object):
 
     @repeat
     def beat(self, time=.5):
-        for m in (0x70, 0xF0):
+        for m in (0x70, 0xf0):
             self._send(m)
             sleep(time)
 
     @repeat
     def fly(self, time=.05):
-        for m in (0xF0, 0xF8, 0xF4, 0xFC):
+        for m in (0xf0, 0xf8, 0xf4, 0xfC):
             self._send(m)
             sleep(time)
 
+    @repeat
+    def dance(self, time=.5):
+        # Doesn't seem to work, but probably the problem is with my buddy hw
+        self._send(0xF0)
+        self._send(0xF3)
+        sleep(time)
+        self._send(0xF1)
+        self._send(0xF2)
+
     @wait
     def red(self):
-        self._send(0xE0)
+        self._send(0xe0)
 
     @wait
     def green(self, time):
-        self._send(0xD0)
+        self._send(0xd0)
 
     @wait
     def blue(self):
-        self._send(0xB0)
+        self._send(0xb0)
 
     @wait
     def off(self):
-        self._send(0xF0)
+        self._send(0xf0)
 
 if __name__ == '__main__':
     buddy = Buddy()
     try:
         # Example call
-        buddy.beat()
+        buddy.dance()
     finally:
         buddy.off()

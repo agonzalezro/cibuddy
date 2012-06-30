@@ -3,7 +3,7 @@ What's this?
 
 I wanted some simple way to send commands to the iBuddy device but seems that
 the project [pybuddy](https://github.com/ewall/pybuddy) was abandoned and no
-longer working (at least, no at Ubuntu 12.04).
+longer working (at least, not at Ubuntu 12.04).
 
 It's called cibuddy because we want to use it as a Continuous Integration
 alert.
@@ -34,5 +34,6 @@ Allowed commands:
 Thanks
 ------
 
-Thanks a lot to the guys that created pybuddy, and to the guy that wrote [this
-excellent article](http://www.gadgets.co.uk/mas_assets/full/IBUDDY.gif).
+Thanks a lot to the guys that created pybuddy, to the guy that wrote [this
+excellent article](http://imakethin.gs/blog/hacking-the-usb-i-buddy), and
+to [this guy](http://www.youtube.com/watch?v=oHg5SJYRHA0).
