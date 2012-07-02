@@ -23,12 +23,12 @@ This small class allows you to control the buddy easily:
 
 Allowed commands:
 
-- red
-- green
-- blue
-- beat
-- fly
-- dance
+- `.red()`: Turn the head on with color red.
+- `.green()`: Turn the head on with color green.
+- `.blue()`: Turn the head on with color blue.
+- `.beat(time=.05)`: Beat the heart, the time var is the time between each beat.
+- `.fly(time=.05)`: Move the winds.
+- `.dance(time=.05)`: Make the buddy dance left-right-left-..-N!
 
 
 Thanks

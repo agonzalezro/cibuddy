@@ -49,7 +49,7 @@ class Buddy(object):
     SETUP = (0x22, 0x09, 0x00, 0x02, 0x01, 0x00, 0x00, 0x00)
     HEADER = (0x55, 0x53, 0x42, 0x43, 0x00, 0x40, 0x02)
     VENDOR_ID = 0x1130
-    POSSIBLE_PRODUCTS = (0x001, )
+    POSSIBLE_PRODUCTS = (0x0001, )
 
     def __init__(self):
         self.device = self.get_device()
@@ -122,10 +122,11 @@ class Buddy(object):
     def off(self):
         self._send(0xf0)
 
+
 if __name__ == '__main__':
     buddy = Buddy()
     try:
         # Example call
-        buddy.dance()
+        buddy.fly()
     finally:
         buddy.off()
